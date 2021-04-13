@@ -1,0 +1,31 @@
+{
+  "appTitle": "Todo Bloc",
+  "addTodo": "Add Todo",
+  "inputTodoHint": "What needs to be done?",
+  "inputTodoEmptyWarning": "Please enter some text",
+  "additionalNotes": "Additional Notes...",
+  "todoDetails": "Todo Details",
+  "deleteTodo": "Delete Todo",
+  "editTodo": "Edit Todo",
+  "saveChanges": "Save changes",
+  "markAllComplete": "Mark all complete",
+  "markAllIncomplete": "Mark all incomplete",
+  "clearCompleted": "Clear completed",
+  "filterTodos": "Filter Todos",
+  "showAll": "Show All",
+  "showActive": "Show Active",
+  "showCompleted": "Show Completed",
+  "todos": "Todos",
+  "stats": "Stats",
+  "deletedTodoTask": "Deleted \"{todoTask}\"",
+  "@deletedTodoTask": {
+    "placeholders": {
+      "todoTask": {
+        "type": "String"
+      }
+    }
+  },
+  "undo": "Undo",
+  "completedTodos": "Completed Todos",
+  "activeTodos": "Active Todos"
+}

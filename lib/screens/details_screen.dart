@@ -8,6 +8,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:todo_bloc/bloc_library_keys.dart';
 import 'package:todo_bloc/blocs/blocs.dart';
 import 'package:todo_bloc/common/todos_app_core/todos_app_core.dart';
+import 'package:todo_bloc/l10n/l10n.dart';
 import 'package:todo_bloc/screens/screens.dart';
 
 class DetailsScreen extends StatelessWidget {
@@ -25,10 +26,10 @@ class DetailsScreen extends StatelessWidget {
         final todo = (state as TodosLoaded).todoById(id);
         return Scaffold(
           appBar: AppBar(
-            title: Text('Todo Details'),
+            title: Text(l10n(context).todoDetails),
             actions: [
               IconButton(
-                tooltip: 'Delete Todo',
+                tooltip: l10n(context).deleteTodo,
                 key: ArchSampleKeys.deleteTodoButton,
                 icon: Icon(Icons.delete),
                 onPressed: () {
@@ -95,7 +96,7 @@ class DetailsScreen extends StatelessWidget {
                 ),
           floatingActionButton: FloatingActionButton(
             key: ArchSampleKeys.editTodoFab,
-            tooltip: 'Edit Todo',
+            tooltip: l10n(context).editTodo,
             child: Icon(Icons.edit),
             onPressed: todo == null
                 ? null

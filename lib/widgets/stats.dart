@@ -9,6 +9,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:todo_bloc/bloc_library_keys.dart';
 import 'package:todo_bloc/blocs/blocs.dart';
 import 'package:todo_bloc/common/todos_app_core/todos_app_core.dart';
+import 'package:todo_bloc/l10n/l10n.dart';
 import 'package:todo_bloc/widgets/widgets.dart';
 
 class Stats extends StatelessWidget {
@@ -30,7 +31,7 @@ class Stats extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.only(bottom: 8.0),
                   child: Text(
-                    'Completed Todos',
+                    l10n(context).completedTodos,
                     style: Theme.of(context).textTheme.headline6,
                   ),
                 ),
@@ -45,7 +46,7 @@ class Stats extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.only(bottom: 8.0),
                   child: Text(
-                    'Active Todos',
+                    l10n(context).activeTodos,
                     style: Theme.of(context).textTheme.headline6,
                   ),
                 ),

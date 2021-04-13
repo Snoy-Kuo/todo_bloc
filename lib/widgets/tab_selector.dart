@@ -5,6 +5,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:todo_bloc/common/todos_app_core/todos_app_core.dart';
+import 'package:todo_bloc/l10n/l10n.dart';
 import 'package:todo_bloc/models/models.dart';
 
 class TabSelector extends StatelessWidget {
@@ -31,7 +32,8 @@ class TabSelector extends StatelessWidget {
                 ? ArchSampleKeys.todoTab
                 : ArchSampleKeys.statsTab,
           ),
-          label: tab == AppTab.stats ? 'Stats' : 'Todos',
+          label:
+              tab == AppTab.stats ? l10n(context).stats : l10n(context).todos,
         );
       }).toList(),
     );

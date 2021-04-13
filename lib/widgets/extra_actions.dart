@@ -9,6 +9,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:todo_bloc/bloc_library_keys.dart';
 import 'package:todo_bloc/blocs/blocs.dart';
 import 'package:todo_bloc/common/todos_app_core/todos_app_core.dart';
+import 'package:todo_bloc/l10n/l10n.dart';
 import 'package:todo_bloc/models/models.dart';
 
 class ExtraActions extends StatelessWidget {
@@ -41,14 +42,16 @@ class ExtraActions extends StatelessWidget {
                 key: ArchSampleKeys.toggleAll,
                 value: ExtraAction.toggleAllComplete,
                 child: Text(
-                  allComplete ? 'Mark all incomplete' : 'Mark all complete',
+                  allComplete
+                      ? l10n(context).markAllIncomplete
+                      : l10n(context).markAllComplete,
                 ),
               ),
               PopupMenuItem<ExtraAction>(
                 key: ArchSampleKeys.clearCompleted,
                 value: ExtraAction.clearCompleted,
                 child: Text(
-                  'Clear completed',
+                  l10n(context).clearCompleted,
                 ),
               ),
             ],

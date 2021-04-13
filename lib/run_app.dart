@@ -11,6 +11,8 @@ import 'package:todo_bloc/common/todos_repository_core/todos_repository_core.dar
 import 'package:todo_bloc/models/models.dart';
 import 'package:todo_bloc/screens/screens.dart';
 
+import 'l10n/l10n.dart';
+
 void runBlocLibraryApp(TodosRepository repository) {
   Bloc.observer = BlocObserver();
   runApp(
@@ -29,7 +31,9 @@ class App extends StatelessWidget {
     final todosBloc = BlocProvider.of<TodosBloc>(context);
 
     return MaterialApp(
-      title: 'Todo Bloc',
+      onGenerateTitle: (context) => l10n(context).appTitle,
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
       theme: ArchSampleTheme.theme,
       routes: {
         ArchSampleRoutes.home: (context) {

@@ -5,6 +5,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:todo_bloc/common/todos_app_core/todos_app_core.dart';
+import 'package:todo_bloc/l10n/l10n.dart';
 import 'package:todo_bloc/models/models.dart';
 
 typedef OnSaveCallback = void Function(String task, String note);
@@ -40,7 +41,7 @@ class _AddEditScreenState extends State<AddEditScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          isEditing ? 'Edit Todo' : 'Add Todo',
+          isEditing ? l10n(context).editTodo : l10n(context).addTodo,
         ),
       ),
       body: Padding(
@@ -55,10 +56,12 @@ class _AddEditScreenState extends State<AddEditScreen> {
                 autofocus: !isEditing,
                 style: textTheme.headline5,
                 decoration: InputDecoration(
-                  hintText: 'What needs to be done?',
+                  hintText: l10n(context).inputTodoHint,
                 ),
                 validator: (val) {
-                  return val!.trim().isEmpty ? 'Please enter some text' : null;
+                  return val!.trim().isEmpty
+                      ? l10n(context).inputTodoEmptyWarning
+                      : null;
                 },
                 onSaved: (value) => _task = value!,
               ),
@@ -68,7 +71,7 @@ class _AddEditScreenState extends State<AddEditScreen> {
                 maxLines: 10,
                 style: textTheme.subtitle1,
                 decoration: InputDecoration(
-                  hintText: 'Additional Notes...',
+                  hintText: l10n(context).additionalNotes,
                 ),
                 onSaved: (value) => _note = value!,
               )
@@ -79,7 +82,7 @@ class _AddEditScreenState extends State<AddEditScreen> {
       floatingActionButton: FloatingActionButton(
         key:
             isEditing ? ArchSampleKeys.saveTodoFab : ArchSampleKeys.saveNewTodo,
-        tooltip: isEditing ? 'Save changes' : 'Add Todo',
+        tooltip: isEditing ? l10n(context).saveChanges : l10n(context).addTodo,
         child: Icon(isEditing ? Icons.check : Icons.add),
         onPressed: () {
           if (_formKey.currentState!.validate()) {

@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:todo_bloc/blocs/blocs.dart';
 import 'package:todo_bloc/common/todos_app_core/todos_app_core.dart';
+import 'package:todo_bloc/l10n/l10n.dart';
 import 'package:todo_bloc/models/models.dart';
 import 'package:todo_bloc/widgets/widgets.dart';
 
@@ -17,7 +18,7 @@ class HomeScreen extends StatelessWidget {
       builder: (context, activeTab) {
         return Scaffold(
           appBar: AppBar(
-            title: Text('Todo Bloc'),
+            title: Text(l10n(context).appTitle),
             actions: [
               FilterButton(visible: activeTab == AppTab.todos),
               ExtraActions(),
@@ -30,7 +31,7 @@ class HomeScreen extends StatelessWidget {
               Navigator.pushNamed(context, ArchSampleRoutes.addTodo);
             },
             child: Icon(Icons.add),
-            tooltip: 'Add Todo',
+            tooltip: l10n(context).addTodo,
           ),
           bottomNavigationBar: TabSelector(
             activeTab: activeTab,

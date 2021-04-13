@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:todo_bloc/blocs/blocs.dart';
 import 'package:todo_bloc/common/todos_app_core/todos_app_core.dart';
+import 'package:todo_bloc/l10n/l10n.dart';
 import 'package:todo_bloc/models/models.dart';
 
 class FilterButton extends StatelessWidget {
@@ -61,14 +62,14 @@ class _Button extends StatelessWidget {
   Widget build(BuildContext context) {
     return PopupMenuButton<VisibilityFilter>(
       key: ArchSampleKeys.filterButton,
-      tooltip: 'Filter Todos',
+      tooltip: l10n(context).filterTodos,
       onSelected: onSelected,
       itemBuilder: (BuildContext context) => <PopupMenuItem<VisibilityFilter>>[
         PopupMenuItem<VisibilityFilter>(
           key: ArchSampleKeys.allFilter,
           value: VisibilityFilter.all,
           child: Text(
-            'Show All',
+            l10n(context).showAll,
             style: activeFilter == VisibilityFilter.all
                 ? activeStyle
                 : defaultStyle,
@@ -78,7 +79,7 @@ class _Button extends StatelessWidget {
           key: ArchSampleKeys.activeFilter,
           value: VisibilityFilter.active,
           child: Text(
-            'Show Active',
+            l10n(context).showActive,
             style: activeFilter == VisibilityFilter.active
                 ? activeStyle
                 : defaultStyle,
@@ -88,7 +89,7 @@ class _Button extends StatelessWidget {
           key: ArchSampleKeys.completedFilter,
           value: VisibilityFilter.completed,
           child: Text(
-            'Show Completed',
+            l10n(context).showCompleted,
             style: activeFilter == VisibilityFilter.completed
                 ? activeStyle
                 : defaultStyle,
