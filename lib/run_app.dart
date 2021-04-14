@@ -59,6 +59,7 @@ class App extends StatelessWidget {
               todosBloc.add(AddTodo(Todo(task, note: note)));
             },
             isEditing: false,
+            todo: Todo(''),
           );
         },
       },

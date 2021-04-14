@@ -47,7 +47,7 @@ TODO App using Bloc to manage state.
 
  - collect all label texts to a localized class.
  - show red background and 'Delete' text, while horizontal swiping or draging todo item.
- - modify EditTodoScreen to StatelessWidget with a Bloc to invalidate the form inputs.
+ - modify AddEditScreen to StatelessWidget with a Bloc to invalidate the form inputs.
  - add tests.
 
   The final result is on final_result branch.
