@@ -20,5 +20,6 @@
   "deletedTodoTask": "刪除「{todoTask}」",
   "undo": "還原",
   "completedTodos": "已完成項目",
-  "activeTodos": "未完成項目"
+  "activeTodos": "未完成項目",
+  "delete": "刪除"
 }

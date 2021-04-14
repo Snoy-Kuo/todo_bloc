@@ -27,5 +27,6 @@
   },
   "undo": "Undo",
   "completedTodos": "Completed Todos",
-  "activeTodos": "Active Todos"
+  "activeTodos": "Active Todos",
+  "delete": "Delete"
 }

@@ -6,6 +6,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:todo_bloc/common/todos_app_core/todos_app_core.dart';
+import 'package:todo_bloc/l10n/l10n.dart';
 import 'package:todo_bloc/models/models.dart';
 
 class TodoItem extends StatelessWidget {
@@ -22,11 +23,46 @@ class TodoItem extends StatelessWidget {
     required this.todo,
   }) : super(key: key);
 
+  Widget _slideBackground(BuildContext context, {required bool toRight}) {
+    return Container(
+      color: Colors.red,
+      child: Align(
+        child: Row(
+          mainAxisAlignment:
+          toRight ? MainAxisAlignment.start : MainAxisAlignment.end,
+          children: <Widget>[
+            SizedBox(
+              width: toRight ? 20 : 0,
+            ),
+            Icon(
+              Icons.delete,
+              color: Colors.white,
+            ),
+            Text(
+              l10n(context).delete,
+              style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.w700,
+              ),
+              textAlign: toRight ? TextAlign.left : TextAlign.right,
+            ),
+            SizedBox(
+              width: toRight ? 0 : 20,
+            ),
+          ],
+        ),
+        alignment: toRight ? Alignment.centerLeft : Alignment.centerRight,
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Dismissible(
       key: ArchSampleKeys.todoItem(todo.id),
       onDismissed: onDismissed,
+      background: _slideBackground(context, toRight: true),
+      secondaryBackground: _slideBackground(context, toRight: false),
       child: ListTile(
         onTap: onTap,
         leading: Checkbox(
