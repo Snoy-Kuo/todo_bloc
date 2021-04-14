@@ -32,7 +32,7 @@ class App extends StatelessWidget {
 
     return MaterialApp(
       onGenerateTitle: (context) => l10n(context).appTitle,
-      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      localizationsDelegates: l10nDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
       theme: ArchSampleTheme.theme,
       routes: {

@@ -5,19 +5,19 @@ import 'package:todo_bloc/models/models.dart';
 class DeleteTodoSnackBar extends SnackBar {
   DeleteTodoSnackBar(
       {Key? key,
-      required BuildContext context,
+      required AppLocalizations localizations,
       required Todo todo,
       required VoidCallback onUndo})
       : super(
           key: key,
           content: Text(
-            l10n(context).deletedTodoTask(todo.task),
+            localizations.deletedTodoTask(todo.task),
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
           ),
           duration: Duration(seconds: 2),
           action: SnackBarAction(
-            label: l10n(context).undo,
+            label: localizations.undo,
             onPressed: onUndo,
           ),
         );

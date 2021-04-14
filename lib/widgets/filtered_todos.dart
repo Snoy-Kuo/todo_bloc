@@ -9,6 +9,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:todo_bloc/bloc_library_keys.dart';
 import 'package:todo_bloc/blocs/blocs.dart';
 import 'package:todo_bloc/common/todos_app_core/todos_app_core.dart';
+import 'package:todo_bloc/l10n/l10n.dart';
 import 'package:todo_bloc/models/models.dart';
 import 'package:todo_bloc/screens/screens.dart';
 import 'package:todo_bloc/widgets/widgets.dart';
@@ -39,7 +40,7 @@ class FilteredTodos extends StatelessWidget {
                 onDismissed: (_) {
                   todosBloc.add(DeleteTodo(todo));
                   ScaffoldMessenger.of(context).showSnackBar(DeleteTodoSnackBar(
-                      context: context,
+                      localizations: l10n(context),
                       key: ArchSampleKeys.snackbar,
                       todo: todo,
                       onUndo: () => todosBloc.add(AddTodo(todo))));
@@ -53,7 +54,7 @@ class FilteredTodos extends StatelessWidget {
                   if (removedTodo != null) {
                     ScaffoldMessenger.of(context).showSnackBar(
                         DeleteTodoSnackBar(
-                            context: context,
+                            localizations: l10n(context),
                             key: ArchSampleKeys.snackbar,
                             todo: todo,
                             onUndo: () => todosBloc.add(AddTodo(todo))));
