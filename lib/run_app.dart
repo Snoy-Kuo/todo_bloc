@@ -26,6 +26,9 @@ void runBlocLibraryApp(TodosRepository repository) {
 }
 
 class App extends StatelessWidget {
+  final bool isTest;
+
+  App({this.isTest = false});
   @override
   Widget build(BuildContext context) {
     final todosBloc = BlocProvider.of<TodosBloc>(context);
@@ -33,7 +36,8 @@ class App extends StatelessWidget {
     return MaterialApp(
       onGenerateTitle: (context) => l10n(context).appTitle,
       localizationsDelegates: l10nDelegates,
-      supportedLocales: AppLocalizations.supportedLocales,
+      supportedLocales:
+      isTest ? [Locale('en')] : AppLocalizations.supportedLocales,
       theme: ArchSampleTheme.theme,
       routes: {
         ArchSampleRoutes.home: (context) {
