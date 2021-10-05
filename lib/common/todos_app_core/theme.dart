@@ -13,8 +13,6 @@ class ArchSampleTheme {
 
     return ThemeData.dark().copyWith(
       primaryColor: Colors.grey[800],
-      accentColor: Colors.cyan[300],
-      buttonColor: Colors.grey[800],
       textSelectionTheme: TextSelectionThemeData(
         selectionColor: Colors.cyan[100],
       ),

@@ -19,7 +19,7 @@ class FilterButton extends StatelessWidget {
     final activeStyle = Theme.of(context)
         .textTheme
         .bodyText2!
-        .copyWith(color: Theme.of(context).accentColor);
+        .copyWith(color: Theme.of(context).toggleableActiveColor);
     final filteredTodosBloc = BlocProvider.of<FilteredTodosBloc>(context);
     return BlocBuilder(
         bloc: filteredTodosBloc,
